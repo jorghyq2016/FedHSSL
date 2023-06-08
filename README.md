@@ -1,8 +1,11 @@
 # FedHSSL
 This is the official repo for the paper [A Hybrid Self-Supervised Learning Framework for Vertical Federated Learning](https://arxiv.org/abs/2208.08934).
 
+## 1. Methodology
 
-## 1. Settings: model and dataset
+![FedHSLL_method](./figs/fedhssl_method.png)
+
+## 2. Settings: model and dataset
  Dataset                | number of clients | model | batch_size:pretrain  | batch_size:cls  | pretrain_epochs | 
 |------------------------|:---------------: |:---------------: | :---------------: | :---------------: |:--------------------------:|
 | nuswide10classes2party |    2 | mlp2 | 512 | 512 |             10             |
@@ -27,7 +30,7 @@ Settings used: 'aligned_label_percent' is [0.2, 0.4], meaning 20% and 40% of all
 | 6   |   pretrain_lr_decay   | 1: enable; 0: disable. default: 1 |  
 | 8   |    use_local_model    |    1: enable local model in ft    |  
 
-## 2. Classificaiton
+## 3. Classificaiton
 Classification and Finetuning learning_rate is set to [0.005 0.01 0.03 0.05].
 
 ### Vanilla Classification
@@ -37,7 +40,7 @@ python main_cls.py --dataset nuswide10classes2party --model mlp2 --input_size 32
 ```
 
 
-## 3. Pretrain
+## 4. Pretrain
 By default, the pretrained model is saved in the 'premodels' directory, which can be changed by modifying args 'pretrain_model_dir'. This directory
 is also used by main_cls.py for loading pretrained models.
 
@@ -59,14 +62,14 @@ python main_pretrain.py --dataset nuswide10classes2party --model mlp2 --input_si
 --pretrain_method simsiam --local_ssl 1 --aggregation_mode pma --aligned_label_percent 0.2
 
 ```
-## 4. Finetune
+## 5. Finetune
 Note that the pretrained_path should match the format defined in prepare_experiments.py (here model name is used as the name string), please refer to a pretrained model.
 ```buildoutcfg
 python main_cls.py --dataset nuswide10classes2party --model mlp2 --input_size 32 \ 
 --batch_size 512 --k 2 --pretrained_path mlp2
 ```
 
-## Citation
+## 6. Citation
 
 Please kindly cite our paper if you find this code useful for your research.
 
