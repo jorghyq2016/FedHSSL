@@ -77,7 +77,7 @@ Please kindly cite our paper if you find this code useful for your research.
 @misc{he2022hybrid,
   title = {A {{Hybrid Self-Supervised Learning Framework}} for {{Vertical Federated Learning}}},
   author = {He, Yuanqin and Kang, Yan and Luo, Jiahuan and Fan, Lixin and Yang, Qiang},
-  year = {2022},
+  year = {2023},
   month = aug,
   number = {arXiv:2208.08934},
   eprint = {2208.08934},
