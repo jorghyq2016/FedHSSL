@@ -139,17 +139,10 @@ class ClientTemplate():
 
     def update_local_top_model(self, backbone_local_state_dict, x=None, device='cpu'):
         if x is None:
-            if self.args.pretrain_ema > 0.0:
-                weighted_params = copy.deepcopy(self.model_local_top.state_dict())
-
-                for k in weighted_params.keys():
-                    weighted_params[k] = weighted_params[k] * self.args.pretrain_ema + backbone_local_state_dict[k] * (
-                                1. - self.args.pretrain_ema)
-                self.model_local_top.load_state_dict(weighted_params)
-            else:
-                self.model_local_top.load_state_dict(backbone_local_state_dict)
+            self.model_local_top.load_state_dict(backbone_local_state_dict)
             self.model_local_top.to(device)
         else:
+            self.model_local_top.load_state_dict(backbone_local_state_dict)
             self.model_local_top.to(device)
 
     def get_local_top_model(self, defense_ratio=0.0):
