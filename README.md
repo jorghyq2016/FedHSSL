@@ -74,7 +74,7 @@ python main_cls.py --dataset nuswide10classes2party --model mlp2 --input_size 32
 Please kindly cite our paper if you find this code useful for your research.
 
 ```
-@article{he2022hybrid,
+@article{he2024hybrid,
   author={He, Yuanqin and Kang, Yan and Zhao, Xinyuan and Luo, Jiahuan and Fan, Lixin and Han, Yuxing and Yang, Qiang},
   journal={IEEE Transactions on Big Data}, 
   title={A Hybrid Self-Supervised Learning Framework for Vertical Federated Learning}, 
