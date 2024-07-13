@@ -6,12 +6,19 @@ This is the official repo for the paper [A Hybrid Self-Supervised Learning Frame
 ![FedHSLL_method](./figs/fedhssl_method.png)
 
 ## 2. Settings: model and dataset
+
  Dataset                | number of clients | model | batch_size:pretrain  | batch_size:cls  | pretrain_epochs | 
 |------------------------|:---------------: |:---------------: | :---------------: | :---------------: |:--------------------------:|
 | nuswide10classes2party |    2 | mlp2 | 512 | 512 |             10             |
 | mn4party               |  4 | resnet | 512 | 128 |             40             | 
 | bhi2party              |  2| resnet | 512 | 128 |             40             | 
 | ctr_avazu2party        |  2| dnnfm | 512 | 512 |             40             | 
+
+We use the following datasets for experiments. 
+- `NUSWIDE` can be downloaded at [here](https://lms.comp.nus.edu.sg/wp-content/uploads/2019/research/nuswide/NUS-WIDE.html) or [here](https://opendatalab.com/OpenDataLab/NUS-WIDE)
+- `Avazu` is located in the [data](https://github.com/yankang18/FedCVT/tree/main/data) directory.
+- `BHI`
+You can adopt any dataset to run the code. 
 
 ### Aligned and labeled data splitting.
 
